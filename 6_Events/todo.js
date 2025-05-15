@@ -18,4 +18,23 @@
 
 
 
-// 
+// let fibonacci = [0, 1]
+// for (let index = 0; index < 12; index++) {
+//     const sum = fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length - 2]
+//     fibonacci.push(sum)
+//     console.log(sum)
+// }
+// let num = 0
+// let count = 0
+// function getFibonacciNumber(n) {
+//     count++
+//     if(count == n - 1){
+//         return
+//     }
+//     num = fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length - 2]
+//     fibonacci.push(num)
+//     console.log(num)
+//     getFibonacciNumber(n)
+// }
+
+// getFibonacciNumber(9)
