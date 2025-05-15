@@ -9,21 +9,21 @@
 <body>
     <div class="calculator-container">
         <div class="display">
-            <input type="text" value="0" readonly id="input">
+            <input type="text" value="" readonly id="input">
         </div>
         <div class="buttons">
             <button>CE</button>
             <button>C</button>
             <button>X</button>
             <button>/</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
+            <button onclick="displayNum(7)">7</button>
+            <button onclick="displayNum(8)">8</button>
+            <button onclick="displayNum(9)">9</button>
             <button>x</button>
             <button>4</button>
             <button>5</button>
             <button>6</button>
-            <button>-</button>
+            <button onclick="operator('-')">-</button>
             <button>1</button>
             <button>2</button>
             <button>3</button>
