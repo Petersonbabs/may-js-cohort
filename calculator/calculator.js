@@ -2,24 +2,37 @@
 const inputEl = document.getElementById("input")
 let canClear = false
 
-// save the first set of numbers in a variable= > firstVal
+let firstValue;
+let secondValue;
+let operatorSign;
+
 // save the operator that was clicked in a vaiabl => operator
 
-function displayNum(num){
-    if(canClear){
+function displayNum(num) {
+    if (canClear) {
         inputEl.value = ""
         inputEl.value += num
         canClear = false
-    }else{
+    } else {
         inputEl.value += num
     }
 }
 
-function operator(){
+function operator(sign) {
+    // save the first set of numbers in a variable = > firstVal
+    firstValue = inputEl.value
+    operatorSign = sign
     canClear = true
 }
 
 
-function equalTo(){
+function equalTo() {
+    secondValue = inputEl.value
+    console.log(firstValue, operatorSign, secondValue)
     // log the firstValue, Operator, and the secondValue
+}
+
+function clearScreen(){
+    // alert()
+    inputEl.value = ""
 }

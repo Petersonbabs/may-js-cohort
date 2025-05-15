@@ -13,13 +13,13 @@
         </div>
         <div class="buttons">
             <button>CE</button>
-            <button>C</button>
-            <button>X</button>
-            <button>/</button>
+            <button onclick="clearScreen()">C</button>
+            <button >X</button> 
+            <button onclick="operator('/')">/</button>
             <button onclick="displayNum(7)">7</button>
             <button onclick="displayNum(8)">8</button>
             <button onclick="displayNum(9)">9</button>
-            <button>x</button>
+            <button onclick="operator('*')">x</button>
             <button>4</button>
             <button>5</button>
             <button>6</button>
@@ -27,11 +27,11 @@
             <button>1</button>
             <button>2</button>
             <button>3</button>
-            <button>+</button>
+            <button onclick="operator('+')">+</button>
             <button></button>
             <button>0</button>
             <button>.</button>
-            <button>=</button>
+            <button onclick="equalTo()">=</button>
         </div>
     </div>
 
