@@ -49,7 +49,7 @@
     }
   </style>
 </head>
-<body>
+<body>,
   <div class="container" id="app">
     <h1>School Overview</h1>
     <div id="school-info"></div>
@@ -124,7 +124,53 @@
       }
     };
 
-   
+    function renderSchoolInfo() {
+      const container = document.getElementById("school-info");
+
+      container.innerHTML = `
+        <h2>${school.name}</h2>
+        <p><strong>Address:</strong> ${school.address.street}, ${school.address.city}, ${school.address.state} - ${school.address.zip}</p>
+        <h2>Departments</h2>
+        ${school.departments.map(dept => `
+          <div class="department">
+            <h3>${dept.name} Department (Head: ${dept.head})</h3>
+            ${dept.teachers.map(teacher => `
+              <p><strong>Teacher:</strong> ${teacher.name} - ${teacher.subject}</p>
+              ${teacher.classes.map(cls => `
+                <p><strong>Class:</strong> ${cls.className}</p>
+                <div class="students">
+                  <ul>
+                    ${cls.students.map(st => `
+                      <li>
+                        ${st.name} (Age: ${st.age}) - Scores: ${Object.entries(st.scores).map(([subject, score]) => `${subject}: ${score}`).join(", ")}
+                      </li>
+                    `).join("")}
+                  </ul>
+                </div>
+              `).join("")}
+            `).join("")}
+          </div>
+        `).join("")}
+
+        <div class="facility">
+          <h2>Facilities</h2>
+          <h4>Library Books:</h4>
+          <ul>
+            ${school.facilities.library.books.map(book => `
+              <li>${book.title} by ${book.author} - Copies: ${book.copies}</li>
+            `).join("")}
+          </ul>
+          <h4>Labs:</h4>
+          <ul>
+            ${Object.entries(school.facilities.labs).map(([lab, status]) => `
+              <li>${lab}: ${status ? "Available" : "Not Available"}</li>
+            `).join("")}
+          </ul>
+        </div>
+      `;
+    }
+
+    renderSchoolInfo();
   </script>
 </body>
 </html>
